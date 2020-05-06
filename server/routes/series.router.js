@@ -21,4 +21,17 @@ router.get("/", rejectUnauthenticated, (req, res) => {
     });
 });
 
+// GET Route to get genre from database
+router.get("/genre/:id", (req, res) => {
+  const queryText = `SELECT * FROM series WHERE id=$1 GROUP BY "series.id`;
+  pool
+    .query(queryText, [req.params.id])
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.log("ERROR in completing SELECT series query", err);
+      res.sendStatus(500);
+    });
+});
 module.exports = router;
