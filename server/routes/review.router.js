@@ -21,10 +21,6 @@ router.get("/", rejectUnauthenticated, (req, res) => {
     });
 });
 
-const {
-  rejectUnauthenticated,
-} = require("../modules/authentication-middleware");
-
 //    GET all Reviews
 
 router.get("/", rejectUnauthenticated, (req, res) => {
