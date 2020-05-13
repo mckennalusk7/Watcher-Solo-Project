@@ -13,12 +13,13 @@ import Footer from "../Footer/Footer";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
-import AboutPage from "../pages/AboutPage/AboutPage";
-import UserPage from "../pages/UserPage/UserPage";
-import InfoPage from "../pages/InfoPage/InfoPage";
-import LandingPage from "../pages/LandingPage/LandingPage";
-import LoginPage from "../pages/LoginPage/LoginPage";
-import RegisterPage from "../pages/RegisterPage/RegisterPage";
+import AboutPage from "../AboutPage/AboutPage";
+import UserPage from "../UserPage/UserPage";
+import InfoPage from "../InfoPage/InfoPage";
+import LandingPage from "../LandingPage/LandingPage";
+import LoginPage from "../LoginPage/LoginPage";
+import RegisterPage from "../RegisterPage/RegisterPage";
+import HomePage from "../HomePage/HomePage";
 
 import "./App.css";
 
@@ -60,6 +61,12 @@ class App extends Component {
               path="/registration"
               authRedirect="/admin"
               component={RegisterPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/series"
+              authRedirect="/admin"
+              component={HomePage}
             />
 
             {/* If none of the other routes matched, we will show a 404. */}

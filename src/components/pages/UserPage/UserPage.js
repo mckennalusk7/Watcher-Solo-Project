@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
-import LogOutButton from "../../LogOutButton/LogOutButton";
-import mapStoreToProps from "../../../redux/mapStoreToProps";
+
+import LogOutButton from "../LogOutButton/LogOutButton";
+import mapStoreToProps from "../../redux/mapStoreToProps";
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
@@ -13,6 +14,18 @@ const UserPage = (props) => (
     <LogOutButton className="log-in" />
   </div>
 );
+
+class UserPage extends Component {
+  render() {
+    return (
+      <div>
+        <header className="header">
+          <h1 className="title"> User Profile</h1>
+        </header>
+      </div>
+    );
+  }
+}
 
 // this allows us to use <App /> in index.js
 export default connect(mapStoreToProps)(UserPage);
