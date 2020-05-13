@@ -8,7 +8,7 @@ const {
 
 //    GET all Ratings
 
-router.get("/", rejectUnauthenticated, (req, res) => {
+router.get("/rating", rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT * FROM "rating" ORDER BY "rating" ASC;`;
   pool
     .query(queryText)
