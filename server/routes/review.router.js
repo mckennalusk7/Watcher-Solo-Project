@@ -23,7 +23,7 @@ router.get("/", rejectUnauthenticated, (req, res) => {
 
 //    GET all Reviews
 
-router.get("/", rejectUnauthenticated, (req, res) => {
+router.get("/review", rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT * FROM "review" ORDER BY "review" ASC;`;
   pool
     .query(queryText)
