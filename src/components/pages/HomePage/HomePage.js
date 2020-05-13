@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import mapStoreToProps from "../../redux/mapStoreToProps";
-import SeriesList from "../SeriesList/SeriesList";
+import mapStoreToProps from "../../../redux/mapStoreToProps";
+import SeriesList from "../../SeriesList/SeriesList";
 
 import "./HomePage.css";
 
