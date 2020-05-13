@@ -62,6 +62,12 @@ class App extends Component {
               authRedirect="/admin"
               component={RegisterPage}
             />
+            <ProtectedRoute
+              exact
+              path="/series"
+              authRedirect="/admin"
+              component={HomePage}
+            />
 
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
