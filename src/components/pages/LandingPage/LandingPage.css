@@ -11,7 +11,7 @@ Button
 -------------------------------------------------------------------------------- */
 
 .btn {
-  background-color: #00acb0;
+  background-color: #97cdfc;
   border-radius: 4px;
   color: #f8f8f8;
   display: inline-block;
@@ -32,7 +32,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #ffc0c0;
   text-decoration: none;
 }
 

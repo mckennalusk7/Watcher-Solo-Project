@@ -6,7 +6,8 @@ import "./LandingPage.css";
 
 class LandingPage extends Component {
   state = {
-    heading: "Class Component",
+    heading:
+      "Welcome to Watcher. Find All your favorite TV Series in one place",
   };
 
   onLogin = (event) => {
