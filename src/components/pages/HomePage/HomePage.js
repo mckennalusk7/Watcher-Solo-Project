@@ -6,15 +6,27 @@ import SeriesList from "../../SeriesList/SeriesList";
 import "./HomePage.css";
 
 class HomePage extends Component {
+  handleSelectGenre = (id) => (event) => {
+    this.props.history.push(`/genre/${id}`);
+  };
   componentDidMount() {
     this.props.dispatch({ type: "GET_SERIES" });
   }
   render() {
     return (
       <div>
-        {this.props.store.seriesReducer.map((item, index) => {
-          return <SeriesList key={index} series={item} />;
-        })}
+        <h1> Your Top Series</h1>
+        <div>
+          {this.props.store.seriesReducer.map((item, index) => {
+            return <SeriesList key={index} series={item} />;
+          })}
+        </div>
+        <div>
+          <button id="genre-selection" onClick={this.handleSelectGenre}>
+            {" "}
+            Genres{" "}
+          </button>
+        </div>
       </div>
     );
   }
