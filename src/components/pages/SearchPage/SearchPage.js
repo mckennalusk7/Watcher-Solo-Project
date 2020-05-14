@@ -17,13 +17,6 @@ class SearchPage extends Component {
     );
   };
 
-  onSearchClick = (event) => {
-    this.props.dispatch({
-      type: "SET_SEARCH",
-      payload: this.state,
-    });
-  };
-
   render() {
     return (
       <div>
