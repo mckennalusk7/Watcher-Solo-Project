@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 class tvShowPage extends Component {
   componentDidMount() {
-    this.props.dispatch({ type: "GET_SERIES" });
+    this.props.dispatch({ type: "SET_SERIES" });
   }
 
   handleBackButton = () => {

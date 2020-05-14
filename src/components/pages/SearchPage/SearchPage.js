@@ -19,7 +19,7 @@ class SearchPage extends Component {
 
   onSearchClick = (event) => {
     this.props.dispatch({
-      type: "GET_SERIES",
+      type: "SET_SEARCH",
       payload: this.state,
     });
   };

@@ -7,10 +7,10 @@ import "./HomePage.css";
 
 class HomePage extends Component {
   handleSelectGenre = (id) => (event) => {
-    this.props.history.push(`/genre/${id}`);
+    this.props.history.push(`/tvshow/${id}`);
   };
   componentDidMount() {
-    this.props.dispatch({ type: "GET_SERIES" });
+    this.props.dispatch({ type: "SET_SERIES" });
   }
   render() {
     return (
