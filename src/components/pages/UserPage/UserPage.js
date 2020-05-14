@@ -18,14 +18,10 @@ class UserPage extends Component {
     });
   };
 
-  // Need to create post route to upload image file
+  // Post route has been added
 
-  fileUploadHandler = () => {
-    const data = new FormData();
-    data.append("file", this.state.fileSelectHandler);
-    axios.post("/api/upload", data).then((res) => {
-      console.log(res.sendStatus);
-    });
+  fileUploadHandler = (id) => (event) => {
+    this.props(`/api/upload/${id}`);
   };
 
   render() {
