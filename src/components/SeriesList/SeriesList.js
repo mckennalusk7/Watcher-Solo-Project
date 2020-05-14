@@ -7,7 +7,7 @@ class SeriesList extends Component {
       <div>
         <div className="container">
           <div className="series_episode">
-            <h2> {this.props.series.genre}</h2>
+            <h2> {this.props.series.series}</h2>
           </div>
         </div>
       </div>

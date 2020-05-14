@@ -30,9 +30,6 @@ class tvShowPage extends Component {
               <div key={series.id}>
                 <h2>{series.series}</h2>
                 <h4>{series.episode}</h4>
-                <h4>{series.season}</h4>
-                <h4>{series.platform}</h4>
-                <h4>{series.genre}</h4>
               </div>
             );
           })}

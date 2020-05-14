@@ -8,7 +8,7 @@ const {
 
 //    GET all Series  for home page
 
-router.get("/series", rejectUnauthenticated, (req, res) => {
+router.get("/", rejectUnauthenticated, (req, res) => {
   const queryText = `SELECT * FROM "series" ORDER BY "series" ASC;`;
   pool
     .query(queryText)
