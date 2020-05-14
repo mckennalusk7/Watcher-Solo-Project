@@ -35,7 +35,7 @@ const Nav = (props) => {
               {" "}
               My Series
             </Link>
-            <Link className="nav-link" to="/genres">
+            <Link className="nav-link" to="/search">
               {" "}
               Search
             </Link>

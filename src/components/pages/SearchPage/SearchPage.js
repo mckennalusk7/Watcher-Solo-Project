@@ -1,9 +1,39 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class SearchPage extends Component {
-  componentDidMount() {
-    this.props.dispatch({ type: "GET_SERIES" });
+  state = {
+    genres: "",
+  };
+
+  onInputChange = (input) => (event) => {
+    this.setState(
+      {
+        [input]: event.target.value,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
+
+  onSearchClick = (event) => {
+    this.props.dispatch({
+      type: "SET_SEARCH",
+      payload: this.state,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <h2> Search your favorite shows </h2>
+        <div>
+          <input type="text" onChange={this.onInputChange("genres")}></input>
+          <button onClick={this.onSearchClick}> Next </button>
+        </div>
+      </div>
+    );
   }
 }
 
