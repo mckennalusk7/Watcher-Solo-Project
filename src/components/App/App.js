@@ -20,6 +20,8 @@ import LandingPage from "../pages/LandingPage/LandingPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import HomePage from "../pages/HomePage/HomePage";
+import SearchPage from "../pages/SearchPage/SearchPage";
+import tvShowPage from "../pages/tvShowPage/tvShowPage";
 
 import "./App.css";
 
@@ -67,6 +69,18 @@ class App extends Component {
               path="/series"
               authRedirect="/admin"
               component={HomePage}
+            />
+            <ProtectedRoute
+              exact
+              path="/search"
+              authRedirect="/admin"
+              component={SearchPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/tvshow"
+              authRedirect="/admin"
+              component={tvShowPage}
             />
 
             {/* If none of the other routes matched, we will show a 404. */}
