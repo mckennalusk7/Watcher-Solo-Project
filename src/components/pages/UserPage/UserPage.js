@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import axios from "axios";
 
 import LogOutButton from "../../LogOutButton/LogOutButton";
 import mapStoreToProps from "../../../redux/mapStoreToProps";
@@ -8,8 +9,23 @@ import mapStoreToProps from "../../../redux/mapStoreToProps";
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
 class UserPage extends Component {
+  state = {
+    selectedFile: null,
+  };
   fileSelectHandler = (event) => {
-    console.log(event.target.files[0]);
+    this.setState({
+      selectedFile: event.target.files[0],
+    });
+  };
+
+  // Need to create post route to upload image file
+
+  fileUploadHandler = () => {
+    const data = new FormData();
+    data.append("file", this.state.fileSelectHandler);
+    axios.post("/api/upload", data).then((res) => {
+      console.log(res.sendStatus);
+    });
   };
 
   render() {

@@ -12,6 +12,7 @@ const userRouter = require("./routes/user.router");
 const reviewRouter = require("./routes/review.router");
 const ratingRouter = require("./routes/rating.router");
 const seriesRouter = require("./routes/series.router");
+const fileUpload = require("./routes/fileUpload.router");
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.use("/api/user", userRouter);
 app.use("/api/review", reviewRouter);
 app.use("/api/rating", ratingRouter);
 app.use("/api/series", seriesRouter);
+app.use("/api/upload", fileUpload);
 
 // Serve static files
 app.use(express.static("build"));

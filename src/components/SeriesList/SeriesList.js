@@ -9,7 +9,7 @@ class SeriesList extends Component {
     return (
       <div>
         <div className="series_posterImage">
-          <img src={this.props.series.posters} />
+          <img src={this.props.series.poster} />
         </div>
         <div className="container">
           <div className="series_episode">
