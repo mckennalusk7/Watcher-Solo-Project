@@ -5,8 +5,6 @@ const app = express();
 const bodyParser = require("body-parser");
 const sessionMiddleware = require("./modules/session-middleware");
 
-const UploaderS3Router = require("react-dropzone-s3-uploader/s3router");
-
 const passport = require("./strategies/user.strategy");
 
 // Route includes
@@ -16,6 +14,8 @@ const ratingRouter = require("./routes/rating.router");
 const seriesRouter = require("./routes/series.router");
 const fileUpload = require("./routes/fileUpload.router");
 const watchingRouter = require("./routes/watching.router");
+
+const UploaderS3Router = require("react-dropzone-s3-uploader/s3router");
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -38,13 +38,13 @@ app.use("/api/watching", watchingRouter);
 
 app.use(
   "/s3",
-  UploaderS3Router)({
-    bucket: "watcherprojectbucket", // required
-    region: "us-west-2", // optional
-    headers: { "Access-Control-Allow-Origin": "*" }, // optional
-    ACL: "private", // this is the default - set to `public-read` to let anyone view uploads
-  })
-);
+  UploaderS3Router
+)({
+  bucket: "watcherprojectbucket", // required
+  region: "us-west-2", // optional
+  headers: { "Access-Control-Allow-Origin": "*" }, // optional
+  ACL: "public-read", // this is the default - set to `public-read` to let anyone view uploads
+});
 
 // Serve static files
 app.use(express.static("build"));
