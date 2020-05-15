@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import DropzoneS3Uploader from "react-dropzone-s3-uploader";
 
 class ImageUpload extends Component {
   render() {
     const uploadOptions = {
-      server: "http://localhost:4000",
-      signingUrlQueryParams: { uploadType: "avatar" },
+      server: "http://localhost:5000",
+      //   signingUrlQueryParams: { uploadType: "avatar" },
     };
-    const s3Url = "https://my-bucket.s3.amazonaws.com";
+    const s3Url = "https://watcherprojectbucket.s3.amazonaws.com";
 
     return (
       <DropzoneS3Uploader
