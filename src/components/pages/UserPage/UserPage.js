@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import WatchingList from "../../WatchingList/WatchingList";
 import LogOutButton from "../../LogOutButton/LogOutButton";
 import mapStoreToProps from "../../../redux/mapStoreToProps";
+import ImageUpload from "../../ImageUpload/ImageUpload";
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
@@ -31,6 +32,9 @@ class UserPage extends Component {
   render() {
     return (
       <div>
+        <div>
+          <ImageUpload />
+        </div>
         <div>
           <h1 id="welcome"> Hello, {this.props.store.user.username}!</h1>{" "}
           <button id="follow-button"> Follow</button>

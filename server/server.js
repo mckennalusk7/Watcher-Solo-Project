@@ -34,6 +34,16 @@ app.use("/api/series", seriesRouter);
 app.use("/api/upload", fileUpload);
 app.use("/api/watching", watchingRouter);
 
+app.use(
+  "/s3",
+  require("react-dropzone-s3-uploader/s3router")({
+    bucket: "MyS3Bucket", // required
+    region: "us-east-1", // optional
+    headers: { "Access-Control-Allow-Origin": "*" }, // optional
+    ACL: "private", // this is the default - set to `public-read` to let anyone view uploads
+  })
+);
+
 // Serve static files
 app.use(express.static("build"));
 
