@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class SeriesList extends Component {
-  handleSelectSeries = () => {
-    this.props.push(`/api/tvshow/${this.props.match.params.id}`);
-  };
+  // handleSelectSeries = () => {
+  //   this.props.push(`/api/tvshow/${id}`);
+  // };
   render() {
     return (
       <div>

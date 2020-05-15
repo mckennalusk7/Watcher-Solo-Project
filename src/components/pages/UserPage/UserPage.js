@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
 
 import LogOutButton from "../../LogOutButton/LogOutButton";
 import mapStoreToProps from "../../../redux/mapStoreToProps";
@@ -21,7 +20,7 @@ class UserPage extends Component {
   // Post route has been added
 
   fileUploadHandler = (id) => (event) => {
-    this.props(`/api/upload/${id}`);
+    this.props.push(`/api/upload/${this.props.match.params.id}`);
   };
 
   render() {
