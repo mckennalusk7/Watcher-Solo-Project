@@ -4,7 +4,7 @@ import { put, takeLatest } from "redux-saga/effects";
 // GET watching series from server to store
 function* getUserWatching(action) {
   try {
-    const response = yield axios.get("/api/watching");
+    const response = yield axios.post("/api/watching");
     console.log("watchingReducer", response);
     yield put({ type: "SET_WATCHING", payload: response.data });
   } catch (err) {
