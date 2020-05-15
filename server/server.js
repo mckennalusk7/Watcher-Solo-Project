@@ -38,13 +38,13 @@ app.use("/api/watching", watchingRouter);
 
 app.use(
   "/s3",
-  UploaderS3Router
-)({
-  bucket: "watcherprojectbucket", // required
-  region: "us-west-2", // optional
-  headers: { "Access-Control-Allow-Origin": "*" }, // optional
-  ACL: "public-read", // this is the default - set to `public-read` to let anyone view uploads
-});
+  UploaderS3Router({
+    bucket: "watcherprojectbucket", // required
+    region: "us-west-2", // optional
+    headers: { "Access-Control-Allow-Origin": "*" }, // optional
+    ACL: "public-read", // this is the default - set to `public-read` to let anyone view uploads
+  })
+);
 
 // Serve static files
 app.use(express.static("build"));
