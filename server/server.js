@@ -12,7 +12,6 @@ const userRouter = require("./routes/user.router");
 const reviewRouter = require("./routes/review.router");
 const ratingRouter = require("./routes/rating.router");
 const seriesRouter = require("./routes/series.router");
-const fileUpload = require("./routes/fileUpload.router");
 const watchingRouter = require("./routes/watching.router");
 
 const UploaderS3Router = require("react-dropzone-s3-uploader/s3router");
@@ -33,7 +32,6 @@ app.use("/api/user", userRouter);
 app.use("/api/review", reviewRouter);
 app.use("/api/rating", ratingRouter);
 app.use("/api/series", seriesRouter);
-app.use("/api/upload", fileUpload);
 app.use("/api/watching", watchingRouter);
 
 app.use(
