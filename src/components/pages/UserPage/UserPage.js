@@ -45,7 +45,7 @@ class UserPage extends Component {
         </div>
 
         <div>
-          <h2> What I am Watching</h2>
+          <h2 id="watching"> What I am Watching</h2>
           <div>
             {this.props.store.watchingReducer.map((item, index) => {
               return <WatchingList key={index} series={item} />;
