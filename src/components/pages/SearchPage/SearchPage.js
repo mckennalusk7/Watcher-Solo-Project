@@ -20,7 +20,7 @@ class SearchPage extends Component {
   render() {
     return (
       <div>
-        <h2> Search your favorite shows </h2>
+        <h2> TV Series Search </h2>
         <div>
           <input type="text" onChange={this.onInputChange("genres")}></input>
           <button onClick={this.onSearchClick}> Next </button>

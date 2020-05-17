@@ -36,7 +36,7 @@ class UserPage extends Component {
           <ImageUpload />
         </div>
         <div>
-          <h1 id="welcome"> Hello, {this.props.store.user.username}!</h1>{" "}
+          <h1 id="welcome"> Welcome, {this.props.store.user.username}!</h1>{" "}
           <button id="follow-button"> Follow</button>
         </div>
         <div className="add_photo">
