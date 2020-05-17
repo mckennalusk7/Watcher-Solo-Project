@@ -5,11 +5,11 @@ const router = express.Router();
 router.post("/", (req, res) => {
   const imageUpload = req.body.imageUpload;
 
-  const queryString = `INSERT INTO "WATCHING" ("profile picture") VALUES ($1) WHERE "id"=$2`;
+  const queryString = `INSERT INTO "WATCHING" ("profile_picture") VALUES ($1) WHERE "id"=$2`;
   res.sendStatus(200);
 
   pool
-    .query(queryString)
+    .query(queryString, [imageUpload, profile_picture])
     .then((responseFromDb) => {
       console.log(responseFromDb.rows);
       res.send(responseFromDb.rows);

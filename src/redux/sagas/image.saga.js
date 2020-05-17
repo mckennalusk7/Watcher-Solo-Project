@@ -8,7 +8,12 @@ function* postImage(action) {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     };
-    const response = yield axios.post("api/image", action.payload, config);
+
+    const data = {
+      image: action.payload,
+    };
+
+    const response = yield axios.post("api/image", data, config);
     console.log(response);
   } catch (error) {
     console.log("User get request failed", error);
