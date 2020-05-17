@@ -6,6 +6,14 @@ import LogOutButton from "../../LogOutButton/LogOutButton";
 import mapStoreToProps from "../../../redux/mapStoreToProps";
 import ImageUpload from "../../ImageUpload/ImageUpload";
 
+// poster images uploaded
+
+import ozark from "../../Posters/ozark.jpg";
+import deadToMe from "../../Posters/deadToMe.jpg";
+import theLastDance from "../../Posters/theLastDance.jpg";
+import thisIsUs from "../../Posters/thisIsUs.jpg";
+import tigerKing from "../../Posters/tigerKing.jpg";
+import Unorthodox from "../../Posters/Unorthodox.jpg";
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
@@ -45,7 +53,28 @@ class UserPage extends Component {
         </div>
 
         <div>
-          <h2 id="watching"> What I am Watching</h2>
+          <div className="container">
+            <h2 id="watching"> What I am Watching</h2>
+
+            <div className="ozark">
+              <img src={ozark} alt="ozark" />
+            </div>
+            <div className="deadToMe">
+              <img src={deadToMe} alt="deadToMe" />
+            </div>
+            <div className="theLastDance">
+              <img src={theLastDance} alt="theLastDance" />
+            </div>
+            <div className="thisIsUs">
+              <img src={thisIsUs} alt="thisIsUs" />
+            </div>
+            <div className="tigerKing">
+              <img src={tigerKing} alt="tigerKing" />
+            </div>
+            <div className="unorthodox">
+              <img src={Unorthodox} alt="unorthodox" />
+            </div>
+          </div>
           <div>
             {this.props.store.watchingReducer.map((item, index) => {
               return <WatchingList key={index} series={item} />;

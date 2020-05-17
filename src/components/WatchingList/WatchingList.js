@@ -5,10 +5,15 @@ class WatchingList extends Component {
   render() {
     return (
       <div>
-        <div className="container">
-          <h2> {this.props.watching.series}</h2>
+        <div className="watching_posterImage">
+          <img src={this.props.watching.poster} />
         </div>
-        <div key={this.props.watching.id}>
+        <div className="container">
+          <div className="watching_episode">
+            <h2> {this.props.watching.series}</h2>
+          </div>
+        </div>
+        <div key={this.props.series.id}>
           <div>
             <h4> Episode: {this.props.watching.episode}</h4>
           </div>

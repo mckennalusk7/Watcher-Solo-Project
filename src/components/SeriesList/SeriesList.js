@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import ozark from "../Posters/ozark.jpg";
 
 class SeriesList extends Component {
   // handleSelectSeries = () => {
@@ -8,15 +9,15 @@ class SeriesList extends Component {
   render() {
     return (
       <div>
-        <div className="series_posterImage">
-          <img src={this.props.series.poster} />
-        </div>
         <div className="container">
           <div className="series_episode">
             <h2> {this.props.series.series}</h2>
           </div>
         </div>
         <div key={this.props.series.id}>
+          <div className="series_posterImage">
+            <img src={ozark} alt="ozark" />
+          </div>
           <div>
             {" "}
             <button id="series-selection" onClick={this.handleSelectSeries}>

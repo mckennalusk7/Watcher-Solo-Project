@@ -12,7 +12,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <h1> Your Top Series</h1>
+        <h1 id="series"> Your Top Series</h1>
         <div>
           {this.props.store.seriesReducer.map((item, index) => {
             return <SeriesList key={index} series={item} />;
