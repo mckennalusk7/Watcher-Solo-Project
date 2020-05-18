@@ -22,7 +22,7 @@ class SearchPage extends Component {
   render() {
     return (
       <div>
-        <div className="top10">
+        <div className="container">
           <img src={top10} alt="top10" />
         </div>
         <div></div>

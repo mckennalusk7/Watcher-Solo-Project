@@ -32,7 +32,7 @@ class UserPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div>
           <ImageUpload />
         </div>
@@ -46,7 +46,7 @@ class UserPage extends Component {
         </div>
 
         <div>
-          <h2 id="watching"> Currently Watching Series</h2>
+          <h2 className="watching"> Currently Watching Series</h2>
         </div>
         <div>
           {this.props.store.seriesReducer.map((item, index) => {

@@ -3,21 +3,17 @@ import { withRouter } from "react-router-dom";
 
 class tvShowPage extends Component {
   componentDidMount() {
-    this.props.dispatch({ type: "SET_SERIES" });
+    this.props.dispatch({ type: "GET_TVSERIES" });
   }
-
-  handleBackButton = () => {
-    this.props.history.push("/");
-  };
 
   render() {
     //    get series Id
     const id = Number(this.props.match.params.id);
 
     //   select series
-    const seriesSelection = this.props.store.seriesReducer.filter(
-      (seriesReducer) => {
-        return seriesReducer.id === id;
+    const seriesSelection = this.props.store.tvShowReducer.filter(
+      (tvShowReducer) => {
+        return tvShowReducer.id === id;
       }
     );
 
@@ -25,11 +21,13 @@ class tvShowPage extends Component {
       <div>
         <button onClick={this.handleBackButton}>Back</button>
         <div>
-          {seriesSelection.map((series) => {
+          {seriesSelection.map((current) => {
             return (
-              <div key={series.id}>
-                <h2>{series.series}</h2>
-                <h4>{series.episode}</h4>
+              <div key={current.id}>
+                <h2>{current.episode}</h2>
+                <h4>{current.series}</h4>
+                <h5>{current.poster}</h5>
+                <h5>{current.details}</h5>
               </div>
             );
           })}

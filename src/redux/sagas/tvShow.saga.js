@@ -5,14 +5,14 @@ import { put, takeLatest } from "redux-saga/effects";
 function* getTvShow(action) {
   try {
     const response = yield axios.get("/api/tvshow");
-    yield put({ type: "SET_SERIES", payload: response.data });
+    yield put({ type: "GET_TVSERIES", payload: response.data });
   } catch (err) {
     console.warn("error with GET", err);
   }
 }
 
 function* tvShowSaga() {
-  yield takeLatest("SERIES", getTvShow);
+  yield takeLatest("GET_TVSERIES", getTvShow);
 }
 
 export default tvShowSaga;
