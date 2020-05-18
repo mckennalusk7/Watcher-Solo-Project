@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Image from "react-bootstrap/Image";
 
 import WatchingList from "../../WatchingList/WatchingList";
 import LogOutButton from "../../LogOutButton/LogOutButton";
@@ -53,28 +54,31 @@ class UserPage extends Component {
         </div>
 
         <div>
-          <div className="container">
-            <h2 id="watching"> What I am Watching</h2>
+          <container>
+            <row>
+              <h2 id="watching"> What I am Watching</h2>
 
-            <div className="ozark">
-              <img src={ozark} alt="ozark" />
-            </div>
-            <div className="deadToMe">
-              <img src={deadToMe} alt="deadToMe" />
-            </div>
-            <div className="theLastDance">
-              <img src={theLastDance} alt="theLastDance" />
-            </div>
-            <div className="thisIsUs">
-              <img src={thisIsUs} alt="thisIsUs" />
-            </div>
-            <div className="tigerKing">
-              <img src={tigerKing} alt="tigerKing" />
-            </div>
-            <div className="unorthodox">
-              <img src={Unorthodox} alt="unorthodox" />
-            </div>
-          </div>
+              <col xs={6} md={4}>
+                <image src={ozark} alt="ozark" />
+              </col>
+              <div className="deadToMe">
+                <img src={deadToMe} alt="deadToMe" />
+              </div>
+              <div className="theLastDance">
+                <img src={theLastDance} alt="theLastDance" />
+              </div>
+              <div className="thisIsUs">
+                <img src={thisIsUs} alt="thisIsUs" />
+              </div>
+              <div className="tigerKing">
+                <img src={tigerKing} alt="tigerKing" />
+              </div>
+              <div className="unorthodox">
+                <img src={Unorthodox} alt="unorthodox" />
+              </div>
+            </row>
+          </container>
+
           <div>
             {this.props.store.watchingReducer.map((item, index) => {
               return <WatchingList key={index} series={item} />;
