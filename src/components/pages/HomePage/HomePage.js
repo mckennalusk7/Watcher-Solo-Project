@@ -21,6 +21,8 @@ class HomePage extends Component {
   render() {
     return (
       <div>
+        <h1 className="title"> All Time Series</h1>
+
         <div xs={6} md={4}>
           <img src={ozark} alt="ozark" />
         </div>
