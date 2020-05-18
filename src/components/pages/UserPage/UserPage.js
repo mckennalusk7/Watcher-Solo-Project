@@ -2,25 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Image from "react-bootstrap/Image";
 
-import WatchingList from "../../WatchingList/WatchingList";
+import SeriesList from "../../SeriesList/SeriesList";
 import LogOutButton from "../../LogOutButton/LogOutButton";
 import mapStoreToProps from "../../../redux/mapStoreToProps";
 import ImageUpload from "../../ImageUpload/ImageUpload";
 
-// poster images uploaded
-
-import ozark from "../../Posters/ozark.jpg";
-import deadToMe from "../../Posters/deadToMe.jpg";
-import theLastDance from "../../Posters/theLastDance.jpg";
-import thisIsUs from "../../Posters/thisIsUs.jpg";
-import tigerKing from "../../Posters/tigerKing.jpg";
-import Unorthodox from "../../Posters/Unorthodox.jpg";
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
 class UserPage extends Component {
   componentDidMount() {
-    this.props.dispatch({ type: "GET_WATCHING" });
+    this.props.dispatch({ type: "GET_SERIES" });
   }
   // state = {
   //   selectedFile: null,
@@ -54,36 +46,12 @@ class UserPage extends Component {
         </div>
 
         <div>
-          <container>
-            <row>
-              <h2 id="watching"> What I am Watching</h2>
-
-              <col xs={6} md={4}>
-                <image src={ozark} alt="ozark" />
-              </col>
-              <div className="deadToMe">
-                <img src={deadToMe} alt="deadToMe" />
-              </div>
-              <div className="theLastDance">
-                <img src={theLastDance} alt="theLastDance" />
-              </div>
-              <div className="thisIsUs">
-                <img src={thisIsUs} alt="thisIsUs" />
-              </div>
-              <div className="tigerKing">
-                <img src={tigerKing} alt="tigerKing" />
-              </div>
-              <div className="unorthodox">
-                <img src={Unorthodox} alt="unorthodox" />
-              </div>
-            </row>
-          </container>
-
-          <div>
-            {this.props.store.watchingReducer.map((item, index) => {
-              return <WatchingList key={index} series={item} />;
-            })}
-          </div>
+          <h2 id="watching"> Your Top Series</h2>
+        </div>
+        <div>
+          {this.props.store.seriesReducer.map((item, index) => {
+            return <SeriesList key={index} series={item} />;
+          })}
         </div>
 
         <LogOutButton className="log-in" />
@@ -92,5 +60,7 @@ class UserPage extends Component {
   }
 }
 
-// this allows us to use <App /> in index.js
+{
+  /* // this allows us to use <App /> in index.js */
+}
 export default connect(mapStoreToProps)(UserPage);
