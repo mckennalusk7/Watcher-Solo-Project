@@ -41,6 +41,12 @@ class HomePage extends Component {
         <div className="unorthodox">
           <img src={Unorthodox} alt="unorthodox" />
         </div>
+
+        <div>
+          {this.props.store.watchingReducer.map((item, index) => {
+            return <WatchingList key={index} series={item} />;
+          })}
+        </div>
       </div>
     );
   }
